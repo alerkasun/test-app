@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  backend:
+    build: ./FoodTruckApp
+    volumes:
+      - ./FoodTruckApp:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      DB_HOST: db
+      POSTGRES_USER: postgres
+      POSTGRES_DB: myapp_development
+
+  frontend:
+    build: ./food-trucks-app
+    volumes:
+      - ./food-trucks-app:/app
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+
+  db:
+    image: postgres:12
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: myapp_development
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  postgres_data:
