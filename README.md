@@ -18,6 +18,8 @@ This command builds the necessary Docker containers for the backend and frontend
 ### Current Features
 - **Display Food Trucks**: The application displays markers on the map for various food trucks, sourced from the provided data.
 - **Information Pop-up**: Clicking on a truck marker displays a popup with information about the food truck, such as name, address, and food items offered.
+- **Ratings and Reviews**: Each food truck is rated, and users can view generated reviews that provide insights into the quality and popularity of the food offered.
+- **Advanced Filtering**: Users can filter food trucks based on ratings, the presence of reviews, and specific keywords, enhancing the searchability and user experience.
 
 ### Planned Features
 Due to the time constraints of the test challenge, not all planned features could be implemented. Future enhancements include:
